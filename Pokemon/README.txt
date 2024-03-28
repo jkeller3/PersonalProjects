@@ -1,1 +1,1 @@
-Working with Pokemon data to practice Classes.
+Practicing Object-Oriented Programming and SQL concepts using Pokemon.
