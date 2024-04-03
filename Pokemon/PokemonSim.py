@@ -29,7 +29,7 @@ if __name__ == '__main__':
 	earthquake = Attack('Earthquake', 'Ground', 100, 10)
 	charizard = Pokemon (9, 'Charizard', ('Fire', 'Flying'), 20, 42, 38, 20, 24, [fireBlast, airSlash, solarBeam, earthquake])
 
-	print(mawile)
+	# print(mawile)
 
 
 	#print(roserade.weaknesses)
@@ -40,7 +40,7 @@ if __name__ == '__main__':
 
 	# Battle.displayInfo(mawile, roserade)
 
-	# Battle.fight(Battle, charizard, machamp)
+	Battle.fight(Battle, charizard, mawile)
 
 
 

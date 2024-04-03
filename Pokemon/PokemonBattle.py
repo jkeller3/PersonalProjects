@@ -42,7 +42,9 @@ class Battle:
 		stabmultiplier = self.stab(self, pPokemon.types, attack.type)
 		effectivemultiplier = self.checkChart(self, pPokemon, attack.type, ePokemon)
 		crit = self.checkCrit(self)
-		damage = int(((((2*pPokemon.level)/5+2) * (attack.power * (pPokemon.attack / ePokemon.defense)))/50 + 2) * stabmultiplier * effectivemultiplier * crit)
+		# random modifier to add variance to damage calculations
+		randmod = random.randint(217,255) / 255
+		damage = int(((((2*pPokemon.level)/5+2) * (attack.power * (pPokemon.attack / ePokemon.defense)))/50 + 2) * stabmultiplier * effectivemultiplier * crit * randmod)
 		print(f"It's attack did {damage} damage.")
 		ePokemon.chp -= damage
 		if(ePokemon.chp<0):
@@ -83,8 +85,9 @@ class Battle:
 		return multiplier
 
 	def checkCrit(self):
-		num = random.randint(1, 100)
-		if num > 50:
+		num = random.randint(1, 16)
+		# 1 in 16 percent chance of crit
+		if num == 16:
 			print("\nIt's a critical hit!")
 			return 2
 		else:
